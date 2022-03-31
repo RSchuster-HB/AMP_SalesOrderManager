@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AMP_SalesOrderManager", "AMP_SalesOrderManager\AMP_SalesOrderManager.csproj", "{D71DAAF4-CE49-4744-AE5C-56E6E7836533}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D71DAAF4-CE49-4744-AE5C-56E6E7836533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D71DAAF4-CE49-4744-AE5C-56E6E7836533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D71DAAF4-CE49-4744-AE5C-56E6E7836533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D71DAAF4-CE49-4744-AE5C-56E6E7836533}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03E04020-A0F9-48C4-8779-1A96EFCFEFA2}
+	EndGlobalSection
+EndGlobal

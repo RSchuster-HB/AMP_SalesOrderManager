@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Abfragedaten_BC" Class="LinqToSqlDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NAV_DB\NAVISION;Initial Catalog=Abfragedaten_BC;Integrated Security=True" SettingsObjectName="AMP_SalesOrderManager.Properties.Settings" SettingsPropertyName="Abfragedaten_BCConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AMP_SalesOrderMng_InvDiscDetail" Member="AMP_SalesOrderMng_InvDiscDetail">
+    <Type Name="AMP_SalesOrderMng_InvDiscDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Auftragsnr" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Importstring" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="RecordIDText" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
