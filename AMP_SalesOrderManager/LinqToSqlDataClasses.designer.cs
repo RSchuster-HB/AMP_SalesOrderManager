@@ -30,6 +30,9 @@ namespace AMP_SalesOrderManager
 		
     #region Definitionen der Erweiterungsmethoden
     partial void OnCreated();
+    partial void InsertAMP_SalesOrderMng_OrderList(AMP_SalesOrderMng_OrderList instance);
+    partial void UpdateAMP_SalesOrderMng_OrderList(AMP_SalesOrderMng_OrderList instance);
+    partial void DeleteAMP_SalesOrderMng_OrderList(AMP_SalesOrderMng_OrderList instance);
     #endregion
 		
 		public LinqToSqlDataClassesDataContext() : 
@@ -62,45 +65,125 @@ namespace AMP_SalesOrderManager
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<AMP_SalesOrderMng_InvDiscDetail> AMP_SalesOrderMng_InvDiscDetail
+		public System.Data.Linq.Table<AMP_SalesOrderMng_OrderList> AMP_SalesOrderMng_OrderList
 		{
 			get
 			{
-				return this.GetTable<AMP_SalesOrderMng_InvDiscDetail>();
+				return this.GetTable<AMP_SalesOrderMng_OrderList>();
+			}
+		}
+		
+		public System.Data.Linq.Table<AMP_SalesOrderMng_OrderListDetail> AMP_SalesOrderMng_OrderListDetail
+		{
+			get
+			{
+				return this.GetTable<AMP_SalesOrderMng_OrderListDetail>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AMP_SalesOrderMng_InvDiscDetail")]
-	public partial class AMP_SalesOrderMng_InvDiscDetail
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AMP_SalesOrderMng_OrderList")]
+	public partial class AMP_SalesOrderMng_OrderList : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
-		private int _id;
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private string _Auftragsnr;
 		
-		private string _Importstring;
+    #region Definitionen der Erweiterungsmethoden
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnAuftragsnrChanging(string value);
+    partial void OnAuftragsnrChanged();
+    #endregion
 		
-		private string _RecordIDText;
-		
-		public AMP_SalesOrderMng_InvDiscDetail()
+		public AMP_SalesOrderMng_OrderList()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Auftragsnr", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Auftragsnr
 		{
 			get
 			{
-				return this._id;
+				return this._Auftragsnr;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._Auftragsnr != value))
 				{
-					this._id = value;
+					this.OnAuftragsnrChanging(value);
+					this.SendPropertyChanging();
+					this._Auftragsnr = value;
+					this.SendPropertyChanged("Auftragsnr");
+					this.OnAuftragsnrChanged();
 				}
 			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.AMP_SalesOrderMng_OrderListDetail")]
+	public partial class AMP_SalesOrderMng_OrderListDetail
+	{
+		
+		private string _Auftragsnr;
+		
+		private string _Ländercode;
+		
+		private string _ImportString;
+		
+		private System.Data.Linq.Binary _Record_ID;
+		
+		private string _Record_ID_Text;
+		
+		private string _splitTZ;
+		
+		private string _TZDiscountPosition;
+		
+		private string _TZDiscountCode;
+		
+		private int _Discount__;
+		
+		private string _splitNP;
+		
+		private string _NetPriceDiscountCode;
+		
+		private int _NetPriceDiscountPosition;
+		
+		private decimal _NetPriceNewNetPrice;
+		
+		private string _splitTC;
+		
+		private int _TransportLineNo;
+		
+		private string _TransportLineDescription;
+		
+		private decimal _TransportNewUnitPrice;
+		
+		public AMP_SalesOrderMng_OrderListDetail()
+		{
 		}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Auftragsnr", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
@@ -119,34 +202,258 @@ namespace AMP_SalesOrderManager
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Importstring", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string Importstring
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ländercode", DbType="NVarChar(10)")]
+		public string Ländercode
 		{
 			get
 			{
-				return this._Importstring;
+				return this._Ländercode;
 			}
 			set
 			{
-				if ((this._Importstring != value))
+				if ((this._Ländercode != value))
 				{
-					this._Importstring = value;
+					this._Ländercode = value;
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RecordIDText", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string RecordIDText
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ImportString", DbType="NVarChar(222)")]
+		public string ImportString
 		{
 			get
 			{
-				return this._RecordIDText;
+				return this._ImportString;
 			}
 			set
 			{
-				if ((this._RecordIDText != value))
+				if ((this._ImportString != value))
 				{
-					this._RecordIDText = value;
+					this._ImportString = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Record ID]", Storage="_Record_ID", DbType="VarBinary(448)", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Record_ID
+		{
+			get
+			{
+				return this._Record_ID;
+			}
+			set
+			{
+				if ((this._Record_ID != value))
+				{
+					this._Record_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Record ID Text]", Storage="_Record_ID_Text", DbType="NVarChar(100)")]
+		public string Record_ID_Text
+		{
+			get
+			{
+				return this._Record_ID_Text;
+			}
+			set
+			{
+				if ((this._Record_ID_Text != value))
+				{
+					this._Record_ID_Text = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_splitTZ", DbType="VarChar(3) NOT NULL", CanBeNull=false)]
+		public string splitTZ
+		{
+			get
+			{
+				return this._splitTZ;
+			}
+			set
+			{
+				if ((this._splitTZ != value))
+				{
+					this._splitTZ = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TZDiscountPosition", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
+		public string TZDiscountPosition
+		{
+			get
+			{
+				return this._TZDiscountPosition;
+			}
+			set
+			{
+				if ((this._TZDiscountPosition != value))
+				{
+					this._TZDiscountPosition = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TZDiscountCode", DbType="VarChar(3) NOT NULL", CanBeNull=false)]
+		public string TZDiscountCode
+		{
+			get
+			{
+				return this._TZDiscountCode;
+			}
+			set
+			{
+				if ((this._TZDiscountCode != value))
+				{
+					this._TZDiscountCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Discount _]", Storage="_Discount__", DbType="Int NOT NULL")]
+		public int Discount__
+		{
+			get
+			{
+				return this._Discount__;
+			}
+			set
+			{
+				if ((this._Discount__ != value))
+				{
+					this._Discount__ = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_splitNP", DbType="VarChar(8) NOT NULL", CanBeNull=false)]
+		public string splitNP
+		{
+			get
+			{
+				return this._splitNP;
+			}
+			set
+			{
+				if ((this._splitNP != value))
+				{
+					this._splitNP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NetPriceDiscountCode", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string NetPriceDiscountCode
+		{
+			get
+			{
+				return this._NetPriceDiscountCode;
+			}
+			set
+			{
+				if ((this._NetPriceDiscountCode != value))
+				{
+					this._NetPriceDiscountCode = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NetPriceDiscountPosition", DbType="Int NOT NULL")]
+		public int NetPriceDiscountPosition
+		{
+			get
+			{
+				return this._NetPriceDiscountPosition;
+			}
+			set
+			{
+				if ((this._NetPriceDiscountPosition != value))
+				{
+					this._NetPriceDiscountPosition = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NetPriceNewNetPrice", DbType="Decimal(38,18) NOT NULL")]
+		public decimal NetPriceNewNetPrice
+		{
+			get
+			{
+				return this._NetPriceNewNetPrice;
+			}
+			set
+			{
+				if ((this._NetPriceNewNetPrice != value))
+				{
+					this._NetPriceNewNetPrice = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_splitTC", DbType="VarChar(13) NOT NULL", CanBeNull=false)]
+		public string splitTC
+		{
+			get
+			{
+				return this._splitTC;
+			}
+			set
+			{
+				if ((this._splitTC != value))
+				{
+					this._splitTC = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransportLineNo", DbType="Int NOT NULL")]
+		public int TransportLineNo
+		{
+			get
+			{
+				return this._TransportLineNo;
+			}
+			set
+			{
+				if ((this._TransportLineNo != value))
+				{
+					this._TransportLineNo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransportLineDescription", DbType="NVarChar(64) NOT NULL", CanBeNull=false)]
+		public string TransportLineDescription
+		{
+			get
+			{
+				return this._TransportLineDescription;
+			}
+			set
+			{
+				if ((this._TransportLineDescription != value))
+				{
+					this._TransportLineDescription = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TransportNewUnitPrice", DbType="Decimal(38,18) NOT NULL")]
+		public decimal TransportNewUnitPrice
+		{
+			get
+			{
+				return this._TransportNewUnitPrice;
+			}
+			set
+			{
+				if ((this._TransportNewUnitPrice != value))
+				{
+					this._TransportNewUnitPrice = value;
 				}
 			}
 		}

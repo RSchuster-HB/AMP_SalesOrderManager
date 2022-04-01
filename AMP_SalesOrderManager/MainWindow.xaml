@@ -17,7 +17,8 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <DataGrid x:Name="SalesOrderGrid" HorizontalAlignment="Left" Height="339" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+            <DataGrid x:Name="SalesOrderGrid" HorizontalAlignment="Left" Height="288" Margin="10,10,0,0" VerticalAlignment="Top" Width="772"/>
+            <Button Name="btnUpdateNav" Content="VK Aufträge aktualisieren" Click="btnUpdateSalesOrderPage_Click"  HorizontalAlignment="Left" Grid.Column="0" Width="110" Height="20" VerticalAlignment="Top" Margin="10,316,0,0"/>
         </Grid>
     </Grid>
 </Window>

@@ -39,6 +39,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -69,6 +71,16 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Connected Services\sr_InvDiscDetails\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\sr_SalesLine\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="LinqToSqlDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
@@ -109,6 +121,74 @@
     <None Include="Abfragedaten_BCDataSet.xss">
       <DependentUpon>Abfragedaten_BCDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.CreateMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.Create_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.Delete_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.GetRecIdFromKey_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.IsUpdated_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.ReadByRecId_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.ReadMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.Read_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.RechnungsrabattDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.UpdateMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\AMP_SalesOrderManager.sr_InvDiscDetails.Update_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_InvDiscDetails\RechnungsrabattDetails.wsdl" />
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.CreateMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.Create_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.Delete_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.GetRecIdFromKey_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.IsUpdated_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.ReadByRecId_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.ReadMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.Read_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.SalesLine.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.UpdateMultiple_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\AMP_SalesOrderManager.sr_SalesLine.Update_Result.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\sr_SalesLine\SalesLine.wsdl" />
     <None Include="LinqToSqlDataClasses.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>LinqToSqlDataClasses.designer.cs</LastGenOutput>
@@ -127,6 +207,37 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\sr_InvDiscDetails\" />
+    <WCFMetadataStorage Include="Connected Services\sr_SalesLine\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sr_InvDiscDetails\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sr_InvDiscDetails\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sr_InvDiscDetails\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sr_SalesLine\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sr_SalesLine\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\sr_SalesLine\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2,10 +2,16 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LinqToSqlDataClasses">
   <DataContextMoniker Name="/LinqToSqlDataClassesDataContext" />
   <nestedChildShapes>
-    <classShape Id="aeaf8577-df51-4147-91bb-de63790958de" absoluteBounds="2, 3, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/LinqToSqlDataClassesDataContext/AMP_SalesOrderMng_InvDiscDetail" />
+    <classShape Id="9bf08528-71fe-490e-bc61-832e4113d693" absoluteBounds="1.875, 2, 2, 1.0016910807291668">
+      <DataClassMoniker Name="/LinqToSqlDataClassesDataContext/AMP_SalesOrderMng_OrderList" />
       <nestedChildShapes>
-        <elementListCompartment Id="d310184e-f887-42ff-ab77-ed6e5399ad33" absoluteBounds="2.015, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2ba9cbcd-ed74-41f7-85dd-b600025a401c" absoluteBounds="1.8900000000000001, 2.46, 1.9700000000000002, 0.44169108072916669" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c291961-4f0f-48a0-9ed8-2225b88726a4" absoluteBounds="1.5, 4.125, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/LinqToSqlDataClassesDataContext/AMP_SalesOrderMng_OrderListDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="268814db-b8b4-4a6a-8fca-539a65c81e0a" absoluteBounds="1.5150000000000001, 4.585, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
